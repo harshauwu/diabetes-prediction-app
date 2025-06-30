@@ -42,6 +42,8 @@ python app/app.py
 ```
 Open your browser at http://127.0.0.1:5000/ to use the prediction interface.
 
+![Run Flask App](reports/html.png)
+
 ## Results Summary
 Best Model: Tuned Random Forest
 
