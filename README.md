@@ -10,7 +10,7 @@ This project applies machine learning techniques to predict diabetes using the P
 - Deploy predictions via a RESTful Flask API.
 - Present results in a research-style report.
 
-## 🗂 Project Structure
+## Project Structure
 
 ![Project Structure](reports/project_structure.png)
 
