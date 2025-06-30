@@ -1,6 +1,11 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from src.predict import make_prediction
 from flask import Flask, render_template, request
 import numpy as np
-from src.predict import make_prediction
+
 
 app = Flask(__name__)
 
