@@ -1,20 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Diabetes Prediction</title>
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <h2>Enter Patient Data</h2>
-    <form method="POST">
-        {% for field in ["Pregnancies", "Glucose", "BloodPressure", "SkinThickness", "Insulin", "BMI", "DiabetesPedigreeFunction", "Age"] %}
-            <label>{{ field }}:</label>
-            <input type="number" name="{{ field }}" step="any" required><br><br>
-        {% endfor %}
-        <input type="submit" value="Predict">
-    </form>
+<body class="bg-light">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-4 col-sm-6 col-10"> <!-- Smaller column width -->
+                <div class="card shadow p-4">
+                    <h4 class="text-center mb-4">Diabetes Predictor</h4>
+                    <form method="POST" class="small">
+                        {% for field in ["Pregnancies", "Glucose", "BloodPressure", "SkinThickness", "Insulin", "BMI", "DiabetesPedigreeFunction", "Age"] %}
+                            <div class="mb-2">
+                                <label class="form-label">{{ field }}</label>
+                                <input type="number" name="{{ field }}" class="form-control form-control-sm" step="any" required>
+                            </div>
+                        {% endfor %}
+                        <button type="submit" class="btn btn-primary btn-sm w-100 mt-3">Predict</button>
+                    </form>
 
-    {% if prediction is not none %}
-        <h3>Prediction: {{ 'Diabetic' if prediction == 1 else 'Non-Diabetic' }}</h3>
-    {% endif %}
+                    {% if prediction is not none %}
+                        <div class="alert alert-info mt-3 text-center small">
+                            Prediction: <strong>{{ '🩸 Diabetic' if prediction == 1 else '✅ Non-Diabetic' }}</strong>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
